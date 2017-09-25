@@ -1,0 +1,98 @@
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="styl.css" />
+<meta charset="UTF-8">
+<title>Anxiety</title>
+</head>
+<body>
+<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCIn_A8R0C-qhOalIlimsce6NUGvUqUmZ8",
+    authDomain: "anxiety-track.firebaseapp.com",
+    databaseURL: "https://anxiety-track.firebaseio.com",
+    projectId: "anxiety-track",
+    storageBucket: "",
+    messagingSenderId: "759880209520"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+var lastValue = 0;
+var level = 0;
+var x = 0;
+var y = 0;
+
+//DECLARATIONS
+
+//get location
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        console.log("Geolocation is not supported by this browser.")	;
+    }
+}
+
+function showPosition(position) {
+    x =  position.coords.latitude; 
+    y = position.coords.longitude; 
+	alert(x);
+}
+
+//buttons-levels
+
+
+//firebase-push-timestamp
+
+function writeValue(value) {
+			firebase.database().ref('/pozice/').set({
+			pozice: value,
+			});
+			writeData(xy, xy);
+	}
+function setValue () {
+		return firebase.database().ref('/pozice/').once('value').then(function(snapshot) {
+		lastValue = snapshot.val().pozice;
+		lastValue = lastValue + 1;
+		writeValue (lastValue);
+		})
+	}
+
+function writeData (level, location) {
+			var date = + new Date()
+			firebase.database().ref('values/' + lastValue).set({
+			level: level,
+			location: location,
+			timestamp: date,
+		});
+	}
+
+//
+//
+//CALLS
+
+getLocation();
+
+</script>
+
+<div class="container" id="container">
+	<div class="check" id="timestamp_check"></div>
+	<div class="check" id="location_check"></div>
+	<div class="check" id="button_check"></div>
+	<div class="button" id="button1"></div>
+	<div class="button" id="button2"></div>
+	<div class="button" id="button3"></div>
+	<div class="button" id="button4"></div>
+	<div class="button" id="button5"></div>
+	<div class="description" id="description"></div>
+	<div class="link" id="link"></div>
+</div>
+
+
+
+</body>
+</html>
