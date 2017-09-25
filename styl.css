@@ -4,21 +4,24 @@ background-color:#cfbfff
 }
 
 h1 {
-font-size:3em;
+font-size:8em;
     font-weight: bold;
 }
 
 .container {
-position: fixed; /* or absolute */
+position: absolute; /* or absolute */
   top: 50%;
   left: 50%;
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
-text-align:center; 
+text-align:center;
+margin-bottom: 5em; 
 }
 
 .check {
-margin-bottom:1em;
+	font-size:3em;
+	color:#555555;
+margin-bottom:2em;
 }
 
 .button {
@@ -30,7 +33,7 @@ margin-bottom:1em;
    background: -ms-linear-gradient(top, #65a9d7, #3e779d);
    background: -o-linear-gradient(top, #65a9d7, #3e779d);
    background-image: -ms-linear-gradient(top, #65a9d7 0%, #3e779d 100%);
-   padding: 8.5px 17px;
+   padding: 8px 17px;
    -webkit-border-radius: 30px;
    -moz-border-radius: 30px;
    border-radius: 30px;
@@ -39,7 +42,7 @@ margin-bottom:1em;
    box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
    text-shadow: #7ea4bd 0 1px 0;
    color: #06426c;
-   font-size: 24px;
+   font-size: 5em;
    font-family: helvetica, serif;
    text-decoration: none;
    vertical-align: middle;
