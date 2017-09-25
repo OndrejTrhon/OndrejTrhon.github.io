@@ -52,7 +52,7 @@ function writeValue(value) {
 			firebase.database().ref('/pozice/').set({
 			pozice: value,
 			});
-			writeData(xy, xy);
+			writeData();
 	}
 function setValue () {
 		return firebase.database().ref('/pozice/').once('value').then(function(snapshot) {
@@ -62,12 +62,13 @@ function setValue () {
 		})
 	}
 
-function writeData (level, location) {
+function writeData () {
 			var date = + new Date()
 			firebase.database().ref('values/' + lastValue).set({
 			level: level,
-			location: location,
-			timestamp: date,
+			latitude: x,
+			longitude: y,
+			timestamp: date;
 		});
 	}
 
