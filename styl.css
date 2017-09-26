@@ -3,25 +3,20 @@ font-family: "Arial Black", Gadget, sans-serif;
 background-color:#cfbfff
 }
 
-h1 {
-font-size:8em;
+.title {
+font-size:7em;
     font-weight: bold;
 }
 
 .container {
-position: absolute; /* or absolute */
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
+margin-top: 2em;
 text-align:center;
-margin-bottom: 5em; 
+margin-bottom: 3em; 
 }
 
-.check {
+.description {
 	font-size:3em;
-	color:#555555;
-margin-bottom:2em;
+	margin-bottom:1em;
 }
 
 .button {
@@ -71,3 +66,10 @@ margin-bottom:2em;
    background-image: -ms-linear-gradient(top, #3e779d 0%, #65a9d7 100%);
    color: #fff;
    }
+
+   .check {
+	   margin-top:1em;
+	font-size:3em;
+	color:#555555;
+margin-bottom:2em;
+}
